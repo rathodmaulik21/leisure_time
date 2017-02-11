@@ -1,0 +1,76 @@
+<br />
+<br />
+<br />
+<form [formGroup]="userForm" class="form-horizontal" (ngSubmit)="submit()">
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Name</label>
+        <div class="col-sm-4">
+            <div class="input-group input-group-sm">
+                <input [name]="userForm.controls.name" type="text" class="input-sm form-control" placeholder="Name" formControlName="name" maxlength="10" aria-describedby="sizing-addon1" />
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Username</label>
+        <div class="col-sm-4">
+            <div class="input-group input-group-sm">
+                <input [name]="userForm.controls.username" type="text" class="input-sm form-control" formControlName="username" />
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Email</label>
+        <div class="col-sm-4">
+            <div class="input-group input-group-sm">
+                <input [name]="userForm.controls.email" type="text" placeholder="Email" class="input-sm form-control" formControlName="email" />
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">URL</label>
+        <div class="col-sm-4">
+            <div class="input-group input-group-sm">
+                <input [name]="userForm.controls.url" type="text" class="input-sm form-control" placeholder="URL" formControlName="url" />
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Password</label>
+        <div class="col-sm-4">
+            <div class="input-group input-group-sm">
+                <input [name]="userForm.controls.password" type="password" class="input-sm form-control" placeholder="Password" formControlName="password" />
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Confirm Password</label>
+        <div class="col-sm-4">
+            <div class="input-group input-group-sm">
+                <input [name]="userForm.controls.confirmPassword" type="password" class="input-sm form-control" placeholder="Confirm Password" formControlName="confirmPassword" />
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Amount</label>
+        <div class="col-sm-4">
+            <div class="input-group input-group-sm">
+                <input [name]="userForm.controls.amount" type="number" class="input-sm form-control" placeholder="Amount" formControlName="amount" />
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Comments</label>
+        <div class="col-sm-4">
+            <div class="input-group input-group-sm">
+                <textarea [name]="userForm.controls.comment" class="input-sm form-control" placeholder="Comments" formControlName="comment" rows="10"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" value="Save" class="btn-primary" [disabled]="!userForm.valid"></button>
+            <button type="reset" value="Reset" class="btn-danger"></button>
+            <button type="button" value="Close" class="btn-link" autofocus></button>
+        </div>
+    </div>
+</form>

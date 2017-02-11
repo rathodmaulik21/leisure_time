@@ -5,6 +5,10 @@
 
 .topnav {
     width: 100%;
+    background: transparent;
+    box-shadow: 5px 5px 5px #999;
+    -moz-box-shadow: 5px 5px 5px #999;
+    -webkit-box-shadow: 5px 0px 5px #999;
 }
 
 .navbar-brand {
