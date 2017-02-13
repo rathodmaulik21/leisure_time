@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs/Observable';
 import { Observer } from 'rxjs/Observer';
 import { Images } from './images';
 import 'rxjs/add/operator/map';
@@ -17,24 +17,14 @@ export class ImageSearchService {
       return data;
     }
   }
-  getImages(): Observable<any> {
-    if (!this.images) {
-      return this.http.get('http://httpbin.org/get')
-        .map(this.extractImages)
-        .catch(this.handleError);
-    } else {
-      //return cached data
-      return this.createObservable(this.images);
-    }
+  getImages() {
+    return this.http.get('http://httpbin.org/get')
+      .map(this.extractImages)
+      .catch(this.handleError);
   }
-  private createObservable(data: any): Observable<any> {
-    return Observable.create((observer: Observer<any>) => {
-      observer.next(data);
-      observer.complete();
-    });
-  } 
   private handleError(error: any) {
     console.error(error);
     return Observable.throw(error.json().error || 'Server error');
   } 
 }
+

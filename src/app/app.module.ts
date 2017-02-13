@@ -11,6 +11,7 @@ import { UserProfileComponent } from './user/user-profile/user-profile.component
 import { UserPostFormComponent } from './user/user-post-form/user-post-form.component';
 import { ImageSearchComponent } from './user/image-search/image-search.component';
 import { ImageSearchService } from './user/image-search/image-search.service';
+import { ImageService } from './user/image-search/image.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ImageSearchService } from './user/image-search/image-search.service';
     ReactiveFormsModule
   ],
   providers: [
-    ImageSearchService
+    ImageSearchService,
+    ImageService
   ],
   bootstrap: [AppComponent]
 })

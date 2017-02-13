@@ -1,8 +1,8 @@
 # LeisureTime
 
-The Leisure Time is open source project which includes advance use of angular and complex application logic. The Leisure time is single page application
-for the review of the entertainment resources like Movies, Songs, Book, Season, etc. Every user can provide some review of about particular category of thing.
-Each user can recommend their peers, the movies or book they want to recommend.
+The Leisure Time is an open source project which includes advance use of angular and complex application logic. The Leisure time is single page application
+for the review of the entertainment resources like Movies, Songs, Book, Season, etc. Every user can provide some review of movies, songs, books whatever they like.
+Each user can recommend the movies or book to their connections.
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
