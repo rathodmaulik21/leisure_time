@@ -1,0 +1,17 @@
+{
+    "name": "leisure_time_backend",
+    "version": "1.0.0",
+    "description": "Leisure Time Application Rest Api",
+    "main": "index.js",
+    "scripts": {
+        "test": "test"
+    },
+    "author": "Karansinh Thakor",
+    "license": "MIT",
+    "devDependencies": {
+        "body-parser": "^1.16.1",
+        "express.js": "^1.0.0",
+        "mongodb": "^2.2.22",
+        "morgan": "^1.8.1"
+    }
+}
