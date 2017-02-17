@@ -2,5 +2,9 @@
     image-search works!
 </p>
 <ul *ngFor="let image of images">
-    <li>{{ image.origin }}</li>
+    <li>
+        <ul *ngFor="let imageData of image">
+            <li>{{ imageData.contentUrl | json }}</li>
+        </ul>
+    </li>
 </ul>

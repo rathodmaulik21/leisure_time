@@ -12,20 +12,32 @@ import { UserPostFormComponent } from './user/user-post-form/user-post-form.comp
 import { ImageSearchComponent } from './user/image-search/image-search.component';
 import { ImageSearchService } from './user/image-search/image-search.service';
 import { ImageService } from './user/image-search/image.service';
+import { ImgSearchPopupComponent } from './user/img-search-popup/img-search-popup.component';
+import { UserFeedsComponent } from './user/user-feeds/user-feeds.component';
+import { SelectModule } from 'ng2-select';
+import { UserPostCategoryComponent } from './user/user-post-category/user-post-category.component';
+import { RatingComponent } from './app-component/rating/rating.component';
+import { UserRatingComponent } from './user/user-rating/user-rating.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderNavComponent,
     UserPostFormComponent,
-    ImageSearchComponent
+    ImageSearchComponent,
+    ImgSearchPopupComponent,
+    UserFeedsComponent,
+    UserPostCategoryComponent,
+    RatingComponent,
+    UserRatingComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SelectModule
   ],
   providers: [
     ImageSearchService,

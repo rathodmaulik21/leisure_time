@@ -10,11 +10,11 @@ import { ImageService } from './image.service'
   styleUrls: ['./image-search.component.css']
 })
 export class ImageSearchComponent implements OnInit {
-  public images: Array<Images> = [];
+  public images: Array<any> = [];
   constructor(private imageService: ImageService, private _imageSearchService: ImageSearchService) {
     this._imageSearchService.getImages().subscribe(
       (images) => {
-        this.imageService.setImages(images);
+        this.imageService.setImages(images);debugger;
         this.images = imageService.getAllImages();
       }
     );
@@ -23,7 +23,7 @@ export class ImageSearchComponent implements OnInit {
     return this.images;
   }
   ngOnInit() {
-    let imageDemo: Array<Images> = this.getSearchedImages();
-    console.log("images:" + imageDemo);
+    let imageDemo: Array<any> = this.getSearchedImages();
+    console.log("images:" + this.images);
   }
 }
