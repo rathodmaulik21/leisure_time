@@ -1,6 +1,7 @@
 <div class="PhotoSearch">
     <div class="nub"></div>
-    <div class="input_wrapper"><input data-group="js-editable" type="text" placeholder="Search for a photo" id="searchText" (keypress)="searchByEnter($event)"><span (click)="searchImage()" class="glyphicon glyphicon-search"></span><a class="upload_link" href="#" id=""><span class="upload_icon"></span>Upload</a></div>
+    <div class="input_wrapper"><input data-group="js-editable" type="text" placeholder="Search for a photo" id="searchText" (keypress)="searchByEnter($event)"><span (click)="searchImage()" class="glyphicon glyphicon-search"></span><a class="upload_link" (click)="uploadImage()"
+            id="" style="cursor: pointer"><span class="upload_icon"></span>Upload</a></div>
     <div class="photo_container">
         <div class="photo_container_inner" id="__w2_INgVZO1_container">
             <div class="empty_state hidden" id="__w2_INgVZO1_empty_state">Search for a photo or upload your own
@@ -15,7 +16,7 @@
             </div>
             <div *ngFor="let imageArray of images">
                 <div *ngFor="let imageData of imageArray">
-                    <img [src]="imageData.thumbnailUrl" (click)="selectImage(imageData.webSearchUrl);" style="cursor: pointer" id="searchImageData" />
+                    <img [src]="imageData.thumbnailUrl" (click)="selectImage(imageData.contentUrl);" style="cursor: pointer" id="searchImageData" />
                 </div>
             </div>
         </div>

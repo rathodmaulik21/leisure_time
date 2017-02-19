@@ -10,8 +10,7 @@ import { ImageService } from '../image-search/image.service';
 })
 export class UserPostFormComponent {
   public visible = false;
-  images: Array<any>;
-  imageOriginal: string;
+  images: Array<string> = [];
   userForm: FormGroup;
   selectedImage:string;
 
@@ -21,32 +20,25 @@ export class UserPostFormComponent {
       'name': ['Intersteller', [Validators.required]],
       'comment': ['', [Validators.required, Validators.minLength(4), Validators.maxLength(255)]],
       'rate':[0 ,[Validators.required]],
-      'imageUrl':[this.selectedImage]
+      'imageUrl':['']
     });
   }
   
   public show(): void {
     if(this.visible == false) {
        this.visible = true;
-       // this.searchImage();
     } else {
       this.visible = false;
     }
   }
   
-  /*public searchImage(): void {
-    this._imageSearchService.getImages().subscribe(
-      (images) => {
-        this.imageService.setImages(images);
-        this.images = this.imageService.getAllImages();
-      }
-    );
+  onchange(imageFlag) {
+    if(imageFlag == false) {
+      this.images.push(this.userForm.value.imageUrl);
+      this.visible = false;
+      console.log("image Array:"+this.images);
+    }
   }
-
-  public selectImage(selectedImage:string) {
-    this.selectedImage = selectedImage;
-    console.log("selected Image:"+selectedImage);
-  }*/
 
   submit() {
     console.log(this.userForm.value);

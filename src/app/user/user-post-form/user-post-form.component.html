@@ -39,31 +39,15 @@
         <div class="col-sm-4">
             <div class="input-group input-group-sm">
                 <div class="modifier" id="" (click)="show(image)"><img src="../../../assets/images/search_img.png" class="image" /></div>
-                <app-user-post-image [ngStyle]="{'display': visible ? 'block' : 'none'}"></app-user-post-image>
-                <!-- <div class="PhotoSearch" [ngStyle]="{'display': visible ? 'block' : 'none'}">
-                    <div class="nub"></div>
-                    <div class="input_wrapper"><input data-group="js-editable" type="text" placeholder="Search for a photo" id=""><a class="upload_link" href="#" id=""><span class="upload_icon"></span>Upload</a></div>
-                    <div class="photo_container">
-                        <div class="photo_container_inner" id="__w2_INgVZO1_container">
-                            <div class="empty_state hidden" id="__w2_INgVZO1_empty_state">Search for a photo or upload your own
-                                <div class="bing_attribution">Powered by</div>
-                            </div>
-                            <div class="hidden" id="__w2_INgVZO1_spinner">
-                                <div class="LoadingDots regular">
-                                    <div class="dot first"></div>
-                                    <div class="dot second"></div>
-                                    <div class="dot third"></div>
-                                </div>
-                            </div>
-                            <div *ngFor="let imageArray of images">
-                                <div *ngFor="let imageData of imageArray">
-                                    <img [src]="imageData.thumbnailUrl" formControlName="imageUrl" (click)="selectImage(imageData.webSearchUrl);" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-
+                <app-user-post-image formControlName="imageUrl" [ngStyle]="{'display': visible ? 'block' : 'none'}" (click)="onchange($event)"></app-user-post-image>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Uploaded Image</label>
+        <div class="col-sm-4">
+            <div class="input-group input-group-sm" *ngFor="let image of images">
+                <img [src]="image" style="width: 500px;padding-top: 10px;" />
             </div>
         </div>
     </div>

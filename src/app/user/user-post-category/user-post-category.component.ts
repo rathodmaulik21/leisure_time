@@ -50,8 +50,7 @@ export class UserPostCategoryComponent implements OnInit{
   public refreshValue(selectedValue: any): void {
     this.selectedValue = selectedValue;
   }
-  ngOnInit() {
-  }
+
   //Placeholders for the callbacks which are later providesd
   //by the Control Value Accessor
   private onTouchedCallback: () => void = noop;
@@ -90,5 +89,8 @@ export class UserPostCategoryComponent implements OnInit{
   //From ControlValueAccessor interface
   registerOnTouched(fn: any) {
     this.onTouchedCallback = fn;
+  }
+  
+  ngOnInit() {
   }
 }
