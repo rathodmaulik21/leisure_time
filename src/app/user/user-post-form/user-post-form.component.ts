@@ -1,5 +1,7 @@
-import { Component} from '@angular/core';
+import { Component, Input} from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ImageSearchService } from '../image-search/image-search.service';
+import { ImageService } from '../image-search/image.service';
 
 @Component({
   selector: 'app-user-post-form',
@@ -7,26 +9,44 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./user-post-form.component.css']
 })
 export class UserPostFormComponent {
+  public visible = false;
+  images: Array<any>;
+  imageOriginal: string;
   userForm: FormGroup;
-  emailRegex = '^([a-zA-Z0-9\!\#\$\%\&\'\*\+\/\=\?\^\_\`\{\|\}\~\-]+)(?:\.[A-Za-z0-9\!\#\$\%\&\'\*\+\/\=\?\^\_\`\{\|\}\~\-]+)' +
-  '*@([a-zA-Z0-9]([\-]?[a-zA-Z0-9]+)*\.)+([a-zA-Z0-9]{1,64})$';
+  selectedImage:string;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private imageService: ImageService, private _imageSearchService: ImageSearchService) {
     this.userForm = this.formBuilder.group({
-      'name': ['karan', [Validators.required]],
-      'username': ['kmthakor', [Validators.required]],
-      'email': ['kmthakor@gmail.com', [Validators.required, Validators.pattern(this.emailRegex)]],
-      'url': ['google.com', [Validators.required]],
-      'password': ['', [Validators.required]],
-      'confirmPassword': ['', [Validators.required]],
-      'amount': ['5000', [Validators.required]],
-      'comment': ['', [Validators.required, Validators.minLength(4), Validators.maxLength(255)]]
+      'category':[''],
+      'name': ['Intersteller', [Validators.required]],
+      'comment': ['', [Validators.required, Validators.minLength(4), Validators.maxLength(255)]],
+      'rate':[0 ,[Validators.required]],
+      'imageUrl':[this.selectedImage]
     });
-
-    if (this.userForm.get('name').value === this.userForm.get('username').value) {
-      this.userForm.get('email').patchValue('kmthakor@yahoo.com');
+  }
+  
+  public show(): void {
+    if(this.visible == false) {
+       this.visible = true;
+       // this.searchImage();
+    } else {
+      this.visible = false;
     }
   }
+  
+  /*public searchImage(): void {
+    this._imageSearchService.getImages().subscribe(
+      (images) => {
+        this.imageService.setImages(images);
+        this.images = this.imageService.getAllImages();
+      }
+    );
+  }
+
+  public selectImage(selectedImage:string) {
+    this.selectedImage = selectedImage;
+    console.log("selected Image:"+selectedImage);
+  }*/
 
   submit() {
     console.log(this.userForm.value);

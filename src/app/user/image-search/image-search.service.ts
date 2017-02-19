@@ -24,11 +24,11 @@ export class ImageSearchService {
       return data;
     }
   }
-  getImages() {
+  getImages(searchText:string) {
     let headers = new Headers();
     this.createAuthorizationHeader(headers);
     let params = new URLSearchParams();
-    params.set('q','facebook');
+    params.set('q',searchText);
     return this.http.get('https://api.cognitive.microsoft.com/bing/v5.0/images/search?',{
       headers: headers,
       search: params

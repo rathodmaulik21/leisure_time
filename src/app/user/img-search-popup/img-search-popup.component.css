@@ -178,31 +178,3 @@ img {
 img {
     border: 0;
 }
-
-.image {
-    width: 32px;
-    height: 30px;
-}
-
-.modifier {
-    cursor: pointer;
-    display: inline-block;
-    width: 32px;
-    height: 30px;
-    padding: 1px 2px 2px 2px;
-    box-sizing: border-box;
-    border-radius: 3px;
-    border: 1px solid #fff;
-    font-family: sans-serif;
-    text-align: center;
-    color: #79868c;
-}
-
-.inputName {
-    height: 20px;
-    width: 300px;
-}
-
-label {
-    width: 26%;
-}

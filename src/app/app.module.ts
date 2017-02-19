@@ -18,6 +18,7 @@ import { SelectModule } from 'ng2-select';
 import { UserPostCategoryComponent } from './user/user-post-category/user-post-category.component';
 import { RatingComponent } from './app-component/rating/rating.component';
 import { UserRatingComponent } from './user/user-rating/user-rating.component';
+import { UserPostImageComponent } from './user/user-post-image/user-post-image.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { UserRatingComponent } from './user/user-rating/user-rating.component';
     UserFeedsComponent,
     UserPostCategoryComponent,
     RatingComponent,
-    UserRatingComponent
+    UserRatingComponent,
+    UserPostImageComponent
   ],
   imports: [
     BrowserModule,

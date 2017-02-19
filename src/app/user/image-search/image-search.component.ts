@@ -12,7 +12,7 @@ import { ImageService } from './image.service'
 export class ImageSearchComponent implements OnInit {
   public images: Array<any> = [];
   constructor(private imageService: ImageService, private _imageSearchService: ImageSearchService) {
-    this._imageSearchService.getImages().subscribe(
+    this._imageSearchService.getImages("india").subscribe(
       (images) => {
         this.imageService.setImages(images);debugger;
         this.images = imageService.getAllImages();

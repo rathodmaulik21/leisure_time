@@ -3,74 +3,74 @@
 <br />
 <form [formGroup]="userForm" class="form-horizontal" (ngSubmit)="submit()">
     <div class="form-group">
+        <label class="col-sm-2 control-label">Select Category</label>
+        <div class="col-sm-4">
+            <div class="input-group input-group-sm">
+                <app-user-post-category formControlName="category"></app-user-post-category>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
         <label class="col-sm-2 control-label">Name</label>
         <div class="col-sm-4">
             <div class="input-group input-group-sm">
-                <input [name]="userForm.controls.name" type="text" class="input-sm form-control" placeholder="Name" formControlName="name" maxlength="10" aria-describedby="sizing-addon1" />
+                <input [name]="userForm.controls.name" type="text" class="input-sm form-control" placeholder="Name" formControlName="name" maxlength="10" aria-describedby="sizing-addon1" style="width: 340px;height: 20px;" />
             </div>
         </div>
     </div>
     <div class="form-group">
-        <label class="col-sm-2 control-label">Username</label>
+        <label class="col-sm-2 control-label">Rating</label>
+        <div class="col-sm-4" style="padding-top: 10px;">
+            <div class="input-group input-group-sm">
+                <app-user-rating formControlName="rate"></app-user-rating>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Write Review</label>
         <div class="col-sm-4">
             <div class="input-group input-group-sm">
-                <input [name]="userForm.controls.username" type="text" class="input-sm form-control" formControlName="username" />
+                <textarea [name]="userForm.controls.comment" class="input-sm form-control" placeholder="Write your review here" formControlName="comment" rows="30" style="width: 340px;height: 50px;"></textarea>
             </div>
         </div>
     </div>
     <div class="form-group">
-        <label class="col-sm-2 control-label">Email</label>
+        <label class="col-sm-2 control-label">Upload Images</label>
         <div class="col-sm-4">
             <div class="input-group input-group-sm">
-                <input [name]="userForm.controls.email" type="text" placeholder="Email" class="input-sm form-control" formControlName="email" />
+                <div class="modifier" id="" (click)="show(image)"><img src="../../../assets/images/search_img.png" class="image" /></div>
+                <app-user-post-image [ngStyle]="{'display': visible ? 'block' : 'none'}"></app-user-post-image>
+                <!-- <div class="PhotoSearch" [ngStyle]="{'display': visible ? 'block' : 'none'}">
+                    <div class="nub"></div>
+                    <div class="input_wrapper"><input data-group="js-editable" type="text" placeholder="Search for a photo" id=""><a class="upload_link" href="#" id=""><span class="upload_icon"></span>Upload</a></div>
+                    <div class="photo_container">
+                        <div class="photo_container_inner" id="__w2_INgVZO1_container">
+                            <div class="empty_state hidden" id="__w2_INgVZO1_empty_state">Search for a photo or upload your own
+                                <div class="bing_attribution">Powered by</div>
+                            </div>
+                            <div class="hidden" id="__w2_INgVZO1_spinner">
+                                <div class="LoadingDots regular">
+                                    <div class="dot first"></div>
+                                    <div class="dot second"></div>
+                                    <div class="dot third"></div>
+                                </div>
+                            </div>
+                            <div *ngFor="let imageArray of images">
+                                <div *ngFor="let imageData of imageArray">
+                                    <img [src]="imageData.thumbnailUrl" formControlName="imageUrl" (click)="selectImage(imageData.webSearchUrl);" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
             </div>
         </div>
     </div>
-    <div class="form-group">
-        <label class="col-sm-2 control-label">URL</label>
-        <div class="col-sm-4">
-            <div class="input-group input-group-sm">
-                <input [name]="userForm.controls.url" type="text" class="input-sm form-control" placeholder="URL" formControlName="url" />
-            </div>
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="col-sm-2 control-label">Password</label>
-        <div class="col-sm-4">
-            <div class="input-group input-group-sm">
-                <input [name]="userForm.controls.password" type="password" class="input-sm form-control" placeholder="Password" formControlName="password" />
-            </div>
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="col-sm-2 control-label">Confirm Password</label>
-        <div class="col-sm-4">
-            <div class="input-group input-group-sm">
-                <input [name]="userForm.controls.confirmPassword" type="password" class="input-sm form-control" placeholder="Confirm Password" formControlName="confirmPassword" />
-            </div>
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="col-sm-2 control-label">Amount</label>
-        <div class="col-sm-4">
-            <div class="input-group input-group-sm">
-                <input [name]="userForm.controls.amount" type="number" class="input-sm form-control" placeholder="Amount" formControlName="amount" />
-            </div>
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="col-sm-2 control-label">Comments</label>
-        <div class="col-sm-4">
-            <div class="input-group input-group-sm">
-                <textarea [name]="userForm.controls.comment" class="input-sm form-control" placeholder="Comments" formControlName="comment" rows="10"></textarea>
-            </div>
-        </div>
-    </div>
-    <div class="form-group">
+    <div class="form-group" style="padding-top: 10px;">
         <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" value="Save" class="btn-primary" [disabled]="!userForm.valid"></button>
-            <button type="reset" value="Reset" class="btn-danger"></button>
-            <button type="button" value="Close" class="btn-link" autofocus></button>
+            <button type="submit" value="Save" class=".btn-primary">Submit</button>
+            <button type="reset" value="Reset" class=".btn-warning">Reset</button>
         </div>
     </div>
 </form>

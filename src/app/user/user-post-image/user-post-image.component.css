@@ -184,25 +184,21 @@ img {
     height: 30px;
 }
 
-.modifier {
+.glyphicon {
+    top: 2px;
+    right: 3px;
+    color: #999;
     cursor: pointer;
-    display: inline-block;
-    width: 32px;
-    height: 30px;
-    padding: 1px 2px 2px 2px;
-    box-sizing: border-box;
-    border-radius: 3px;
-    border: 1px solid #fff;
-    font-family: sans-serif;
-    text-align: center;
-    color: #79868c;
 }
 
-.inputName {
-    height: 20px;
-    width: 300px;
-}
-
-label {
-    width: 26%;
+.selectedImage {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    /* IE 8 */
+    filter: alpha(opacity=50);
+    /* IE 5-7 */
+    -moz-opacity: 0.5;
+    /* Netscape */
+    -khtml-opacity: 0.5;
+    /* Safari 1.x */
+    opacity: 0.5;
 }
