@@ -6,7 +6,7 @@
         <label class="col-sm-2 control-label">Select Category</label>
         <div class="col-sm-4">
             <div class="input-group input-group-sm">
-                <app-user-post-category formControlName="category"></app-user-post-category>
+                <app-user-post-category formControlName="category" ngControl="category"></app-user-post-category>
             </div>
         </div>
     </div>
@@ -14,7 +14,7 @@
         <label class="col-sm-2 control-label">Name</label>
         <div class="col-sm-4">
             <div class="input-group input-group-sm">
-                <input [name]="userForm.controls.name" type="text" class="input-sm form-control" placeholder="Name" formControlName="name" maxlength="10" aria-describedby="sizing-addon1" style="width: 340px;height: 20px;" />
+                <input [name]="userForm.controls.name" type="text" class="input-sm form-control" ngControl="name" placeholder="Name" formControlName="name" maxlength="30" aria-describedby="sizing-addon1" style="width: 340px;height: 20px;" required/>
             </div>
         </div>
     </div>
@@ -22,7 +22,7 @@
         <label class="col-sm-2 control-label">Rating</label>
         <div class="col-sm-4" style="padding-top: 10px;">
             <div class="input-group input-group-sm">
-                <app-user-rating formControlName="rate"></app-user-rating>
+                <app-user-rating formControlName="rate" ngControl="rate"></app-user-rating>
             </div>
         </div>
     </div>
@@ -30,7 +30,7 @@
         <label class="col-sm-2 control-label">Write Review</label>
         <div class="col-sm-4">
             <div class="input-group input-group-sm">
-                <textarea [name]="userForm.controls.comment" class="input-sm form-control" placeholder="Write your review here" formControlName="comment" rows="30" style="width: 340px;height: 50px;"></textarea>
+                <textarea [name]="userForm.controls.review" class="input-sm form-control" ngControl="review" placeholder="Write your review here" formControlName="review" rows="30" style="width: 340px;height: 50px;" required></textarea>
             </div>
         </div>
     </div>
@@ -39,7 +39,7 @@
         <div class="col-sm-4">
             <div class="input-group input-group-sm">
                 <div class="modifier" id="" (click)="show(image)"><img src="../../../assets/images/search_img.png" class="image" /></div>
-                <app-user-post-image formControlName="imageUrl" [ngStyle]="{'display': visible ? 'block' : 'none'}" (click)="onchange($event)"></app-user-post-image>
+                <app-user-post-image formControlName="imageUrl" ngControl="imageUrl" [ngStyle]="{'display': visible ? 'block' : 'none'}" (click)="onchange($event)"></app-user-post-image>
             </div>
         </div>
     </div>

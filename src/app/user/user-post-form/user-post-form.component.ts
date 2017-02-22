@@ -2,6 +2,7 @@ import { Component, Input} from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ImageSearchService } from '../image-search/image-search.service';
 import { ImageService } from '../image-search/image.service';
+import { UserFormValidationService } from './user-form-validation.service';
 
 @Component({
   selector: 'app-user-post-form',
@@ -16,11 +17,11 @@ export class UserPostFormComponent {
 
   constructor(private formBuilder: FormBuilder, private imageService: ImageService, private _imageSearchService: ImageSearchService) {
     this.userForm = this.formBuilder.group({
-      'category':[''],
-      'name': ['Intersteller', [Validators.required]],
-      'comment': ['', [Validators.required, Validators.minLength(4), Validators.maxLength(255)]],
-      'rate':[0 ,[Validators.required]],
-      'imageUrl':['']
+      'category':['',[Validators.required, UserFormValidationService.categoryValidator]],
+      'name': ['', [Validators.required]],
+      'review': ['', [Validators.required, Validators.minLength(4), Validators.maxLength(255)]],
+      'rate':[0 ,[Validators.required, UserFormValidationService.rateValidator]],
+      'imageUrl':['',[Validators.required, UserFormValidationService.imageValidator]]
     });
   }
   

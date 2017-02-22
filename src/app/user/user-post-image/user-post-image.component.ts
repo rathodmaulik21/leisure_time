@@ -19,7 +19,6 @@ const noop = () => {
   ]
 })
 export class UserPostImageComponent implements OnInit {
-
   images: Array<any>;
   selectedImage:string;
   imageSelected:boolean;
@@ -39,7 +38,6 @@ export class UserPostImageComponent implements OnInit {
   public searchImage(): void {
     let searchString:string = (<HTMLInputElement>document.getElementById("searchText")).value.trim();
     if(searchString != "") {
-      console.log("search string:"+'facebook');
       this._imageSearchService.getImages(searchString).subscribe(
         (images) => {
           this.imageService.setImages(images);
@@ -68,12 +66,10 @@ export class UserPostImageComponent implements OnInit {
   private onTouchedCallback: () => void = noop;
   private onChangeCallback: (_: any) => void = noop;
 
-  //get accessor
   get value(): any {
     return this.selectedImage;
   };
 
-  //set accessor including call the onchange callback
   set value(v: any) {
     if (v !== this.selectedImage) {
        this.selectedImage = v;
@@ -81,24 +77,20 @@ export class UserPostImageComponent implements OnInit {
     }
   }
 
-  //Set touched on blur
   onBlur() {
     this.onTouchedCallback();
   }
 
-  //From ControlValueAccessor interface
   writeValue(value: any) {
     if (value !== this.selectedImage) {
        this.selectedImage = value;
     }
   }
 
-  //From ControlValueAccessor interface
   registerOnChange(fn: any) {
     this.onChangeCallback = fn;
   }
   
-  //From ControlValueAccessor interface
   registerOnTouched(fn: any) {
     this.onTouchedCallback = fn;
   }

@@ -59,7 +59,6 @@ export class UserRatingComponent implements OnInit {
     return this.rate;
   };
 
-  //set accessor including call the onchange callback
   set value(v: any) {
     if (v !== this.rate) {
        this.rate = v;
@@ -67,24 +66,20 @@ export class UserRatingComponent implements OnInit {
     }
   }
 
-  //Set touched on blur
   onBlur() {
     this.onTouchedCallback();
   }
 
-  //From ControlValueAccessor interface
   writeValue(value: any) {
     if (value !== this.rate) {
        this.rate = value;
     }
   }
 
-  //From ControlValueAccessor interface
   registerOnChange(fn: any) {
     this.onChangeCallback = fn;
   }
   
-  //From ControlValueAccessor interface
   registerOnTouched(fn: any) {
     this.onTouchedCallback = fn;
   }
