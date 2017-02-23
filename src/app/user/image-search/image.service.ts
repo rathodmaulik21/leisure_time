@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Images } from './images'
+
 @Injectable()
 export class ImageService {
   private images: Array<any> = [];
