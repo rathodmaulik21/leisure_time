@@ -1,21 +1,19 @@
 .userFeeds {
     width: 650px;
-    height: 550px;
-    margin-top: 50px;
+    margin-top: 20px;
     margin-left: 50px;
     background: #f4f4f4;
 }
 
 .feedHeader {
     width: 650px;
-    height: 50px;
+    height: 60px;
     border: 0.5px solid lightgrey;
     border-bottom: hidden;
 }
 
 .feedContent {
     width: 650px;
-    height: 460px;
     border: 0.5px solid lightgrey;
     border-top: hidden;
     border-bottom: hidden;
@@ -25,6 +23,7 @@
     width: 650px;
     height: 40px;
     border: 0.5px solid lightgrey;
+    background-color: white;
 }
 
 .likeButton {
@@ -49,7 +48,7 @@
 }
 
 .likeButton a {
-    padding-top: 7px;
+    margin-top: 7px;
 }
 
 .feed-container-theme .feed-s-post-meta {
