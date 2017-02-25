@@ -1,7 +1,7 @@
 <div class="userFeeds">
     <div class="feedHeader">
         <div id="ember2682">
-            <img src="../../../assets/images/karan_img.png" class="avatar member feed-s-avatar-image EntityPhoto-circle-3 ember-view" alt="Khaihann Ng" />
+            <img src="../../../assets/images/karan_img.png" class="avatar member feed-s-avatar-image EntityPhoto-circle-3 ember-view" alt="Karan" />
             <span class="feed-s-post-meta__name Sans-15px-black-85%-semibold hoverable-link-text">Karansinh Thakor</span>
             <span class="feed-s-post-meta__headline Sans-13px-black-55%">
                 Software Engineer at Sophos
@@ -78,3 +78,4 @@
     </div>
 </div>
 <!--<app-user-feeds></app-user-feeds> -->
+<p *ngFor="let feed of userFeedData">{{ feed.name }}</p>
