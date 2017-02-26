@@ -14,16 +14,21 @@ export class LtFeedsComponent implements OnInit {
   constructor(private _ltFeedsService: LtFeedsService, private _ltFeedsHttpService:LtFeedsHttpService) { }
 
   ngOnInit() {
-    this.userFeedData = [];
+    /*this.userFeedData = [];
     this._ltFeedsHttpService.getFeeds().subscribe(
       (feeds) => {debugger;
         this.userFeedData = feeds;
       } 
     );
     this.userFeedSubscription = this._ltFeedsService.userFeedInfo$.subscribe((data) => { this.userFeedData.push(data); }); // observe headInfo object
+    */
     console.log("user feed data"+this.userFeedData);
   }
-
+  
+  public displayComments() {
+    document.getElementById("commentBox").style.display = "inline-table";
+    console.log("inside comment");
+  }
   public loadFeeds() {
     console.log("inside like");
   }

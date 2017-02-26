@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Http, Response, Headers, RequestOptions } from "@angular/http";
+import { Http, Response, Headers, RequestOptions,URLSearchParams} from "@angular/http";
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { UserFormValidationService } from './user-form-validation.service';
 import { LtFeedsService } from '../../feeds/lt-feeds/lt-feeds.service';
@@ -22,7 +22,8 @@ export class UserPostFormComponent {
       'name': ['', [Validators.required]],
       'review': ['', [Validators.required, Validators.minLength(4), Validators.maxLength(255)]],
       'rate': [0, [Validators.required, UserFormValidationService.rateValidator]],
-      'imageUrl': ['', [Validators.required, UserFormValidationService.imageValidator]]
+      'imageUrl': ['', [Validators.required, UserFormValidationService.imageValidator]],
+      'userID':['1', [Validators.required]]
     });
   }
 
@@ -44,12 +45,14 @@ export class UserPostFormComponent {
 
   submit() {
     if (this.userForm.value.category != "" && this.userForm.value.rate > 0 && this.userForm.value.imageUrl != "") {
-      var body:any = JSON.stringify(this.userForm.value);
+      var data:any = JSON.stringify(this.userForm.value);
       let headers = new Headers();
+      let urlSearchParams = new URLSearchParams();
+      urlSearchParams.append("userID","1");
       headers.append('Content-Type', 'application/json');
-      let options = new RequestOptions({ headers: headers });
+      let options = new RequestOptions({ headers: headers, search: urlSearchParams });
       this.http
-        .post('http://localhost:3000/addFeed', body, options)
+        .post('http://localhost:3000/addFeed', data, options)
         .toPromise()
         .then(res => {
           if(res.status == 201) {

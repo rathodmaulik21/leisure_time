@@ -21,7 +21,7 @@
 
 .feedFooter {
     width: 650px;
-    height: 40px;
+    /*height: 40px;*/
     border: 0.5px solid lightgrey;
     background-color: white;
 }
@@ -293,4 +293,38 @@ a {
     font-size: 100%;
     vertical-align: baseline;
     background: 0 0;
+}
+
+.input-group-addon {
+    padding: 0px 0px;
+}
+
+button:hover {
+    background: none;
+    border: none;
+}
+
+button:focus {
+    outline: 0;
+    background: none;
+    border: none;
+}
+
+.form-control:focus {
+    border-color: #cccccc;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+a label {
+    margin: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: 0 0;
+    color: rgba(0, 0, 0, .5);
+}
+
+a label:hover {
+    cursor: pointer;
+    color: #337ab7;
 }

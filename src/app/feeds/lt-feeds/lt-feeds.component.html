@@ -28,7 +28,7 @@
             <app-like></app-like>
         </div>
         <div class="commentButton">
-            <app-comment></app-comment>
+            <app-comment (click)="displayComments()"></app-comment>
         </div>
         <div class="shareButton">
             <app-share></app-share>
@@ -36,6 +36,34 @@
         <div class="recommendButton">
             <app-recommend></app-recommend>
         </div>
+        <div class="input-group" role="form">
+            <span class="input-group-addon" id="basic-addon1">
+                <button class="btn btn-sm btn-default btn-color" style="border: 0px solid transparent;outline: none;padding: 0 0 0 0;background: none">
+                    <img src="../../../assets/images/karan_img.png" alt="logo" class="logoimg" width="29px;">
+                </button>
+            </span>
+            <input class="form-control input-sm inputComment" type="text" placeholder="please comment here" style="width: 590px;" />
+            <span class="input-group-addon" id="basic-addon1">
+                <button class="btn btn-sm btn-default btn-color glyphicon glyphicon-send" type="" style="border: 0px solid transparent;outline: none;padding: 0px 2px 0px 4px;font-size: 1.2em;color: grey;margin-right: 5px;margin-top: 0px;background: none;"></button>
+            </span>
+        </div>
+        <div class="input-group" role="form" style="" id="commentBox">
+            <span class="input-group-addon" id="basic-addon1">
+                <button class="btn btn-sm btn-default btn-color" style="border: 0px solid transparent;outline: none;padding: 0 0 0 0;background: none;float: left">
+                    <img src="../../../assets/images/karan_img.png" alt="logo" class="logoimg" width="29px;"><a><label>Karansinh Thakor</label></a>
+                </button>
+            </span>
+            <input class="form-control input-sm inputComment" type="text" placeholder="" value="Great Batman Fan" style="background: white;border: none;height: 100%;padding-top: 7px;" readonly/>
+        </div>
+        <div class="input-group" role="form" style="" id="commentBox">
+            <span class="input-group-addon" id="basic-addon1">
+                <button class="btn btn-sm btn-default btn-color" style="border: 0px solid transparent;outline: none;padding: 0 0 0 0;background: none;float: left">
+                    <img src="../../../assets/images/karan_img.png" alt="logo" class="logoimg" width="29px;"><a><label>Karansinh</label></a>
+                </button>
+            </span>
+            <input class="form-control input-sm inputComment" type="text" placeholder="" value="Great Batman Fan" style="background: white;border: none;height: 100%;padding-top: 7px;" readonly/>
+        </div>
+
     </div>
 </div>
 <div class="userFeeds">
