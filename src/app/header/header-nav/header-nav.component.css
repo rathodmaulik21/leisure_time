@@ -14,3 +14,14 @@
 .navbar-brand {
     padding: 10px 15px;
 }
+
+button:hover {
+    background: none;
+    border: none;
+}
+
+button:focus {
+    outline: 0;
+    background: none;
+    border: none;
+}
